@@ -3,12 +3,11 @@ module "s3_bucket_account_a" {
   providers   = { aws = aws.account_a }
   bucket_name = var.bucket_names["account_a"]
   environment = var.environments["env_a"]
-  count = 5
 }
 
-# module "s3_bucket_account_b" {
-#   source      = "./s3-repo" # Ruta al módulo
-#   providers   = { aws = aws.account_b }
-#   bucket_name = var.bucket_names["account_b"]
-#   environment = var.environments["env_b"]
-# }
+module "s3_bucket_account_b" {
+  source      = "./s3-repo" # Ruta al módulo
+  providers   = { aws = aws.account_b }
+  bucket_name = var.bucket_names["account_b"]
+  environment = var.environments["env_b"]
+}
