@@ -1,8 +1,8 @@
 module "s3_buckets" {
-  for_each = local.accounts
+  count = length(local.accounts)
 
   source      = "./s3-repo" # Ruta al módulo
-  providers   = { aws = each.value.provider }
-  bucket_name = each.value.bucket_name
-  environment = each.value.environment
+  providers  = { aws = local.accounts[count.index].provider } 
+  bucket_name = local.accounts[count.index].bucket_name  
+  environment = local.accounts[count.index].environment  
 }
