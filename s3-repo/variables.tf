@@ -9,6 +9,6 @@ variable "environment" {
 }
 
 variable "ambiente" {
-  description = "ambiente en el que se va a desplegar el ambiente"
-  type = string
+  description = "Entorno que se va a usar"
+  type        = string
 }

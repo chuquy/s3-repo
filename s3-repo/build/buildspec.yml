@@ -10,6 +10,7 @@ phases:
       - aws s3 cp s3://s3-proyects-terraform-cloud/demo__testing_desarrollo_f6d2c989_5fc8_4db6_854a_ccf12b512fd6/terraform.tfvars . #este comando descarga el archvio .tfvars del bucket S3
       - pwd && ls -altr
       - cat terraform.tfvars
+      - echo "ambiente=${ambiente}"
       - terraform fmt
   post_build:
     commands:
