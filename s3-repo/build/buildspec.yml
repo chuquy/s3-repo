@@ -3,20 +3,26 @@ version: 0.2
 phases:
   pre_build:
     commands:
-  build:
-    commands:
       - cat /etc/*ease
       - terraform --version
       - aws s3 cp s3://s3-proyects-terraform-cloud/$path/terraform.tfvars . #este comando descarga el archvio .tfvars del bucket S3
       - pwd && ls -altr
       - cat terraform.tfvars
       - terraform fmt
-  post_build:
+  build:
     commands:
       - terraform init
       - terraform validate
       - terraform plan 
       - terraform apply -auto-approve
+  post_build:
+    commands:
+      - terraform destroy -auto-approve
+      - aws s3 rm s3://s3-proyects-terraform-cloud/$path/terraform.tfstate
+      - aws s3 rm s3://s3-proyects-terraform-cloud/$path/terraform.tfstate.backup
+      - aws s3 rm s3://s3-proyects-terraform-cloud/$path/.terraform.lock.hcl
+      - aws s3 rm s3://s3-proyects-terraform-cloud/$path/.terraform/terraform.tfstate
+      - aws s3 rm s3://s3-proyects-terraform-cloud/$path/.terraform/terraform.tfstate.backup
 artifacts:
   files:
     - '**/*.tfplan'
