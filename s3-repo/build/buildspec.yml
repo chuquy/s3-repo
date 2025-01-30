@@ -1,5 +1,9 @@
 version: 0.2
 
+env:
+  variables:
+    ambiente: ${ambiente}  # Variable de entorno definida en CodeBuild
+
 phases:
   pre_build:
     commands:
