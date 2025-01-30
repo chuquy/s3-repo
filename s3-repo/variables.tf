@@ -7,3 +7,8 @@ variable "environment" {
   description = "Entorno del bucket (e.g., dev, prod)"
   type        = string
 }
+
+variable "ambiente" {
+  description = "ambiente en el que se va a desplegar el ambiente"
+  type = string
+}
