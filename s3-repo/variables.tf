@@ -8,7 +8,3 @@ variable "environment" {
   type        = string
 }
 
-variable "ambiente" {
-  description = "Entorno que se va a usar"
-  type        = string
-}

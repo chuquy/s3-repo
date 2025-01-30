@@ -7,8 +7,3 @@ variable "environments" {
   description = "Ambientes para etiquetar el recurso (e.g., dev, prod)"
   type        = map(string)
 }
-
-variable "ambiente" {
-  description = "Entorno que se va a usar"
-  type        = string
-}
