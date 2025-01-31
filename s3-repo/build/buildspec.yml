@@ -17,7 +17,6 @@ phases:
       - terraform apply -auto-approve
   post_build:
     commands:
-      - terraform destroy -auto-approve
       - aws s3 rm s3://s3-proyects-terraform-cloud/$path/terraform.tfstate
       - aws s3 rm s3://s3-proyects-terraform-cloud/$path/terraform.tfstate.backup
       - aws s3 rm s3://s3-proyects-terraform-cloud/$path/.terraform.lock.hcl
