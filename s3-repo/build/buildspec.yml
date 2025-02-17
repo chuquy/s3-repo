@@ -5,7 +5,7 @@ phases:
     commands:
       - cat /etc/*ease
       - terraform --version
-      - aws s3 cp s3://s3-proyects-terraform-cloud/demo_prueba_desarrollo_0c06b34a_fc27_49bf_9f9e_81e92a5b1a28/terraform.tfvars . #s3-proyects-terraform-cloudste comando descarga el archvio .tfvars del bucket S3
+      - aws s3 cp s3://s3-proyects-terraform-cloud/salve-mundi-bucket-a/terraform.tfvars . #s3-proyects-terraform-cloudste comando descarga el archvio .tfvars del bucket S3
       - pwd && ls -altr
       - cat terraform.tfvars
       - terraform fmt
