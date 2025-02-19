@@ -1,1 +1,1 @@
-Repositorio de prueba que despliega un modulo terrasform qie tiene un bucket S3
+Repositorio de prueba que despliega un modulo terraform que tiene un bucket S3
